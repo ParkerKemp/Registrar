@@ -31,6 +31,12 @@
 			<version>1.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.spinalcraft</groupId>
+			<artifactId>Spinalpack</artifactId>
+			<version>1.0.1</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>Registrar</finalName>
