@@ -17,6 +17,8 @@ public class RegistrarPlugin extends JavaPlugin {
 		
 		getServer().getPluginManager().registerEvents(new EventListener(this), this);
 		
+		new Thread(new Announcer()).start();
+		
 		console.sendMessage(ChatColor.BLUE + "Registrar online!");
 	}
 	
