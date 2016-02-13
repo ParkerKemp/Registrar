@@ -48,10 +48,10 @@ public class AppInfo {
 	}
 	
 	private String referrerList(){
-		String query = "SELECT * FROM Manager.referredPlayers WHERE player = ?";
+		String query = "SELECT * FROM " + RegistrarPlugin.dbName + ".referredPlayers WHERE player = ?";
 		try {
 			PreparedStatement stmt = Spinalpack.prepareStatement(query);
-			stmt.setString(1, uuid.toString().replace("-", ""));
+			stmt.setString(1, uuid.toString());
 			
 			ResultSet rs = stmt.executeQuery();
 			
