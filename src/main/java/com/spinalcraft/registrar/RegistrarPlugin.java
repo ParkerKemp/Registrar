@@ -12,7 +12,7 @@ public class RegistrarPlugin extends JavaPlugin {
 	
 	static ConsoleCommandSender console;
 	
-	private String dbName;
+	public static String dbName;
 	
 	@Override
 	public void onEnable(){
@@ -23,7 +23,7 @@ public class RegistrarPlugin extends JavaPlugin {
 		saveDefaultConfig();
 		loadConfig();
 
-		new Thread(new Announcer(dbName)).start();
+		new Thread(new Announcer()).start();
 		
 		console.sendMessage(ChatColor.BLUE + "Registrar online!");
 	}

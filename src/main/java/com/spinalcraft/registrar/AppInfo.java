@@ -97,7 +97,7 @@ public class AppInfo {
 	}
 	
 	private boolean loadByUuid(String uuid) throws SQLException{
-		String query = "SELECT * FROM Manager.applications WHERE uuid = ?";
+		String query = "SELECT * FROM " + RegistrarPlugin.dbName + ".applications WHERE uuid = ?";
 		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		stmt.setString(1, uuid);
 		ResultSet rs = stmt.executeQuery();

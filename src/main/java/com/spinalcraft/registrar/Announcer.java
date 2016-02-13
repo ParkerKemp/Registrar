@@ -14,12 +14,6 @@ import com.spinalcraft.spinalpack.Spinalpack;
 
 public class Announcer implements Runnable{
 	
-	private String dbName;
-	
-	public Announcer(String dbName){
-		this.dbName = dbName;
-	}
-	
 	@Override
 	public void run(){
 		while(true){
@@ -41,7 +35,7 @@ public class Announcer implements Runnable{
 	}
 	
 	private ArrayList<String> getUnannouncedPlayers() throws SQLException{
-		String query = "SELECT uuid FROM " + dbName + ".applications WHERE announced = 0";
+		String query = "SELECT uuid FROM " + RegistrarPlugin.dbName + ".applications WHERE announced = 0";
 		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		ResultSet rs = stmt.executeQuery();
 		ArrayList<String> players = new ArrayList<String>();
@@ -56,7 +50,7 @@ public class Announcer implements Runnable{
 		if(player == null)
 			return;
 		
-		String query = "UPDATE " + dbName + ".applications SET announced = 1 WHERE uuid = ?";
+		String query = "UPDATE " + RegistrarPlugin.dbName + ".applications SET announced = 1 WHERE uuid = ?";
 		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		stmt.setString(1, player.getUniqueId().toString());
 		stmt.execute();
