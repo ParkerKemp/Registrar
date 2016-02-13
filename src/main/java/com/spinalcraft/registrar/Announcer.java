@@ -10,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import com.spinalcraft.spinalpack.Co;
 import com.spinalcraft.spinalpack.Spinalpack;
 
 public class Announcer implements Runnable{
@@ -51,5 +52,6 @@ public class Announcer implements Runnable{
 		stmt.execute();
 		
 		Bukkit.broadcastMessage(ChatColor.AQUA + "Welcome our newest Spinaling, " + ChatColor.BLUE + player.getName() + ChatColor.AQUA + "!");
+		player.sendMessage(ChatColor.GOLD + "Welcome to Spinalcraft!");
 	}
 }
