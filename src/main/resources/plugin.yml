@@ -1,5 +1,5 @@
 name: Registrar
-main: com.spinalcraft.registrar.Registrar
+main: com.spinalcraft.registrar.RegistrarPlugin
 version: 1.0
 
 depend: [Spinalpack, UsernameHistory]
