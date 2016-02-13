@@ -28,10 +28,15 @@ public class Announcer implements Runnable{
 				for(String uuid : unannounced){
 					announce(uuid);
 				}
-				Thread.sleep(5000);
 			} catch (Exception e) { //Nothing stops this train. Nothing.
 				e.printStackTrace();
-			} 
+			}
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
