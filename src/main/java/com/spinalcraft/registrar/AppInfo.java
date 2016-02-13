@@ -57,7 +57,7 @@ public class AppInfo {
 			
 			ArrayList<String> usernames = new ArrayList<String>();
 			while(rs.next()){
-				UHistory hist = UsernameHistory.getHistoryFromUuid(UUID.fromString(dashedUuid(rs.getString("referrer"))));
+				UHistory hist = UsernameHistory.getHistoryFromUuid(UUID.fromString(rs.getString("referrer")));
 				if(hist == null)
 					continue;
 				usernames.add(hist.getOldUsernames()[hist.getOldUsernames().length - 1].getName());
@@ -85,7 +85,7 @@ public class AppInfo {
 			info.uuid = uuid;
 			info.username = hist.getOldUsernames()[hist.getOldUsernames().length - 1].getName();
 			
-			if(!info.loadByUuid(uuid.toString().replace("-", "")))
+			if(!info.loadByUuid(uuid.toString()))
 				return null;
 			
 			return info;
