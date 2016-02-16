@@ -22,6 +22,7 @@ public class RegistrarPlugin extends JavaPlugin {
 		loadConfig();
 
 		new Thread(new Announcer()).start();
+		new Thread(new Reminder()).start();
 		
 		console.sendMessage(ChatColor.BLUE + "Registrar online!");
 	}
