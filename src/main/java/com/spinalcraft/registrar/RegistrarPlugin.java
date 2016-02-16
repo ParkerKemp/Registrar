@@ -18,8 +18,6 @@ public class RegistrarPlugin extends JavaPlugin {
 	public void onEnable(){
 		console = Bukkit.getConsoleSender();
 		
-		getServer().getPluginManager().registerEvents(new EventListener(this), this);
-		
 		saveDefaultConfig();
 		loadConfig();
 
