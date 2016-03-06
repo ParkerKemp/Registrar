@@ -79,6 +79,8 @@ public class AppInfo {
 		try {
 			
 			UHistory hist = UsernameHistory.getHistoryFromUsername(username);
+			if(hist == null)
+				return null;
 			UUID uuid = hist.getUuid();
 			if(uuid == null)
 				return null;
