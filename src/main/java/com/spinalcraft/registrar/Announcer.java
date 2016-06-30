@@ -55,7 +55,10 @@ public class Announcer implements Runnable{
 		stmt.setString(1, player.getUniqueId().toString());
 		stmt.execute();
 		
-		Bukkit.broadcastMessage(ChatColor.AQUA + "Welcome our newest Spinaling, " + ChatColor.BLUE + player.getName() + ChatColor.AQUA + "!");
+		Spinalpack spinalPack = (Spinalpack) Bukkit.getPluginManager().getPlugin("Spinalpack");
+		if (spinalPack != null){
+			spinalPack.broadcastMessage(ChatColor.AQUA + "Welcome our newest Spinaling, " + ChatColor.BLUE + player.getName() + ChatColor.AQUA + "!");
+		}
 		player.sendMessage(ChatColor.GOLD + "Welcome to Spinalcraft!");
 	}
 }
