@@ -21,8 +21,11 @@ public class RegistrarPlugin extends JavaPlugin {
 		saveDefaultConfig();
 		loadConfig();
 
-		new Thread(new Announcer()).start();
+		//new Thread(new Announcer()).start();
 		new Thread(new Reminder()).start();
+		
+		RegistrarEventListener listener = new RegistrarEventListener();
+		Bukkit.getPluginManager().registerEvents(listener, this);
 		
 		console.sendMessage(ChatColor.BLUE + "Registrar online!");
 	}
@@ -31,7 +34,6 @@ public class RegistrarPlugin extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		return Commandler.handle(sender, cmd, label, args);
 	}
-	
 
 	private void loadConfig(){
 		reloadConfig();
