@@ -10,3 +10,18 @@ commands:
     usage: Usage - /data <player>
     permission: registrar.data
     permission-message: No!
+  announceresetbit:
+    description: Reset the announced bit in the db. Testing only
+    usage: Usage - /announceresetbit <player>
+    permission: registrar.announceresetbit
+    permission-message: No!
+  removeapprow:
+    description: Removes the row with players application. Testing only
+    usage: Usage - /removeapprow
+    permission: registrar.removeapprow
+    permission-message: No!
+  __announce__:
+    description: Used by the registration site to announce newly registered players
+    usage: Do not use this EVER
+    permission: registrar.__announce__
+    permission-message: No!
