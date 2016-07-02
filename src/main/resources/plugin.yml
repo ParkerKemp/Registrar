@@ -15,6 +15,11 @@ commands:
     usage: Usage - /announceresetbit <player>
     permission: registrar.announceresetbit
     permission-message: No!
+  removeapprow:
+    description: Removes the row with players application. Testing only
+    usage: Usage - /removeapprow
+    permission: registrar.removeapprow
+    permission-message: No!
   __announce__:
     description: Used by the registration site to announce newly registered players
     usage: Do not use this EVER

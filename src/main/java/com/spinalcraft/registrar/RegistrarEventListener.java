@@ -51,10 +51,8 @@ public class RegistrarEventListener implements Listener{
 		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		stmt.setString(1, player.getUniqueId().toString());
 		ResultSet rs = stmt.executeQuery();
-		if (rs == null){
-			return false;
-		}
-		return rs.getBoolean("announced");
+		if (!rs.next()) return false;
+		return !rs.getBoolean("announced");
 	}
 	
 	private void announcePlayer(Player player) throws SQLException{

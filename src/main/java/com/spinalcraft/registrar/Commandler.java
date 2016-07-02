@@ -52,6 +52,20 @@ public class Commandler {
 				e.printStackTrace();
 			}
 		}
+		if (cmd.getName().equalsIgnoreCase("removeapprow")){
+			try {
+				if (!(sender instanceof Player)){
+					sender.sendMessage("This can only be used by a player");
+					return true;
+				} else {
+					removeRow(((Player) sender).getUniqueId());
+					return true;
+				}
+			} catch (SQLException e){
+				sender.sendMessage("Database error");
+				e.printStackTrace();
+			}
+		}
 		//This command is called by the site using a socket.
 		if (cmd.getName().equalsIgnoreCase("__announce__")){
 			if (sender instanceof Player){
@@ -71,6 +85,13 @@ public class Commandler {
 		String query = "UPDATE " + RegistrarPlugin.dbName + ".applications SET announced = ? WHERE uuid = ?";
 		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		stmt.setString(1, bit ? "1" : "0");
+		stmt.setString(2, uuid.toString());
+		stmt.execute();
+	}
+	
+	private static void removeRow(UUID uuid) throws SQLException{
+		String query = "DELETE FROM " + RegistrarPlugin.dbName + ".applications WHERE uuid = ? LIMIT 1";
+		PreparedStatement stmt = Spinalpack.prepareStatement(query);
 		stmt.setString(1, uuid.toString());
 		stmt.execute();
 	}
