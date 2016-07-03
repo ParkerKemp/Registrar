@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import com.spinalcraft.spinalpack.Spinalpack;
 
 public class Announcer implements Runnable{
+	private final static int ANNOUNCE_INTERVAL = 1000 * 60 * 5; //5 minutes
 	
 	@Override
 	public void run(){
@@ -27,7 +28,7 @@ public class Announcer implements Runnable{
 			}
 			
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(ANNOUNCE_INTERVAL);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
