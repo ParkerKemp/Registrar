@@ -13,6 +13,7 @@ public class RegistrarPlugin extends SpinalcraftPlugin {
 	
 	@Override
 	public void onEnable(){
+		super.onEnable();
 		saveDefaultConfig();
 		loadConfig();
 
