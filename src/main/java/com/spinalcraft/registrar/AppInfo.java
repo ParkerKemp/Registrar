@@ -10,7 +10,7 @@ import java.util.UUID;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-import com.spinalcraft.spinalpack.Spinalpack;
+import com.spinalcraft.spinalpack.SpinalcraftPlugin;
 import com.spinalcraft.usernamehistory.UHistory;
 import com.spinalcraft.usernamehistory.UsernameHistory;
 
@@ -50,7 +50,7 @@ public class AppInfo {
 	private String referrerList(){
 		String query = "SELECT * FROM " + RegistrarPlugin.dbName + ".referredPlayers WHERE player = ?";
 		try {
-			PreparedStatement stmt = Spinalpack.prepareStatement(query);
+			PreparedStatement stmt = SpinalcraftPlugin.prepareStatement(query);
 			stmt.setString(1, uuid.toString());
 			
 			ResultSet rs = stmt.executeQuery();
@@ -100,7 +100,7 @@ public class AppInfo {
 	
 	private boolean loadByUuid(String uuid) throws SQLException{
 		String query = "SELECT * FROM " + RegistrarPlugin.dbName + ".applications WHERE uuid = ?";
-		PreparedStatement stmt = Spinalpack.prepareStatement(query);
+		PreparedStatement stmt = SpinalcraftPlugin.prepareStatement(query);
 		stmt.setString(1, uuid);
 		ResultSet rs = stmt.executeQuery();
 		if(!rs.first())

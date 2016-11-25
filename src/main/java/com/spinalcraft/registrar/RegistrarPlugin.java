@@ -1,33 +1,25 @@
 package com.spinalcraft.registrar;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class RegistrarPlugin extends JavaPlugin {
-	
-	static ConsoleCommandSender console;
+import com.spinalcraft.spinalpack.SpinalcraftPlugin;
+
+public class RegistrarPlugin extends SpinalcraftPlugin {
 	
 	public static String dbName;
 	
 	@Override
 	public void onEnable(){
-		console = Bukkit.getConsoleSender();
-		
 		saveDefaultConfig();
 		loadConfig();
 
 		//new Thread(new Announcer()).start();
 		new Thread(new Reminder()).start();
 		
-		RegistrarEventListener listener = new RegistrarEventListener();
-		Bukkit.getPluginManager().registerEvents(listener, this);
-		
-		console.sendMessage(ChatColor.BLUE + "Registrar online!");
+		Bukkit.getPluginManager().registerEvents(new RegistrarEventListener(this), this);
 	}
 	
 	@Override
