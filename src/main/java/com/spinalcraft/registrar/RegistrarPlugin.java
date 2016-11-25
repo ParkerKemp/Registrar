@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.spinalcraft.spinalpack.SpinalcraftPlugin;
+import com.spinalcraft.skull.SpinalcraftPlugin;
 
 public class RegistrarPlugin extends SpinalcraftPlugin {
 	

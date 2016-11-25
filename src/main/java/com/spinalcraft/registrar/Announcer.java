@@ -10,7 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-import com.spinalcraft.spinalpack.SpinalcraftPlugin;
+import com.spinalcraft.skull.SpinalcraftPlugin;
 
 public class Announcer implements Runnable{
 	private final static int ANNOUNCE_INTERVAL = 1000 * 60 * 5; //5 minutes

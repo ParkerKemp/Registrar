@@ -10,7 +10,7 @@ import java.util.UUID;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-import com.spinalcraft.spinalpack.SpinalcraftPlugin;
+import com.spinalcraft.skull.SpinalcraftPlugin;
 import com.spinalcraft.usernamehistory.UHistory;
 import com.spinalcraft.usernamehistory.UsernameHistory;
 
